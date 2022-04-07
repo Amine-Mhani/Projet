@@ -17,7 +17,7 @@
     $query = $con->query("
     SELECT 
       MONTHNAME(created_at) as monthname,
-        count('Dossier Scientifique') as amount
+        count('dossier_scientifique') as amount
     FROM professeurs
     GROUP BY monthname
   ");
@@ -33,7 +33,7 @@
     $query = $con->query("
     SELECT 
       MONTHNAME(created_at) as monthname,
-        count('Dossier Pedagogique') as amount
+        count('dossier_pedagogique') as amount
     FROM professeurs
     GROUP BY monthname
   ");
@@ -49,7 +49,7 @@
     $query = $con->query("
     SELECT 
       MONTHNAME(created_at) as monthname,
-        count('Dossier Administratif') as amount
+        count('dossier_administratif') as amount
     FROM professeurs
     GROUP BY monthname
   ");
