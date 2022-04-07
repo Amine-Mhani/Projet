@@ -17,7 +17,7 @@
     $query = $con->query("
     SELECT 
       MONTHNAME(created_at) as monthname,
-        count('dossier_scientifique') as amount
+        count(dossier_scientifique) as amount
     FROM professeurs
     GROUP BY monthname
   ");
@@ -28,38 +28,8 @@
     }
 
     ?>
-    <?php
-    $con = new mysqli('localhost', 'root', '', 'laravel');
-    $query = $con->query("
-    SELECT 
-      MONTHNAME(created_at) as monthname,
-        count('dossier_pedagogique') as amount
-    FROM professeurs
-    GROUP BY monthname
-  ");
 
-    foreach ($query as $data) {
-        $month[] = $data['monthname'];
-        $amount[] = $data['amount'];
-    }
 
-    ?>
-    <?php
-    $con = new mysqli('localhost', 'root', '', 'laravel');
-    $query = $con->query("
-    SELECT 
-      MONTHNAME(created_at) as monthname,
-        count('dossier_administratif') as amount
-    FROM professeurs
-    GROUP BY monthname
-  ");
-
-    foreach ($query as $data) {
-        $month[] = $data['monthname'];
-        $amount[] = $data['amount'];
-    }
-
-    ?>
 
 
 
